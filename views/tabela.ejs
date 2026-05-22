@@ -1,0 +1,35 @@
+<%- include ('partials/header.ejs') %>
+    <section class="secao-tabela">
+        <div class="tabela-container">
+            <h2 class="titulo-tabela">Sistema de Ranking Militar</h2>
+            <table class="tabela-militar">
+                <thead>
+                    <tr>
+                        <th>Patente</th>
+                        <th>Insígnia</th>
+                        <th>Personagens Notáveis</th>
+                        <th>Responsabilidades</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% tabela.forEach(tabela=> { %>
+                        <tr>
+                            <td>
+                                <%= tabela.patente %>
+                            </td>
+                            <td>
+                                <%= tabela.insignia %>
+                            </td>
+                            <td>
+                                <%= tabela.nome %>
+                            </td>
+                            <td>
+                                <%= tabela.responsabilidade %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+<%- include ('partials/footer.ejs') %>

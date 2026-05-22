@@ -1,0 +1,9 @@
+import express from "express";
+
+const router = express.Router();
+
+router.get("/perfil", function (req, res) {
+  res.render("perfil");
+});
+
+export default router;
