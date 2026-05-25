@@ -1,0 +1,70 @@
+<%- include ('partials/header.ejs') %>
+<div class="oficina-container">
+            <div class="oficina-card">
+                <div class="oficina-header">
+                    <h1>Cadastrar Pedido</h1>
+                </div>
+                <div class="oficina-body">
+                    <form action="/cosplayers/cadastrar" method="POST">
+                        <label>Número do Pedido</label>
+                        <input type="text" name="numero" placeholder="Insira o número do pedido" required class="form-control">
+                        <label>Valor do Pedido</label>
+                        <input type="text" name="valor" placeholder="Insira o valor do pedido" required class="form-control">
+                        <label>Cliente</label>
+                         <select name="oficinaId" class="form-control" required>
+                            <option value="" selected disabled>Selecione um cliente</option>
+                            <% oficinas.forEach(oficina => { %>
+                                <option value="<%= oficina.id %>">
+                                    <%= oficina.nome %>
+                                </option>
+                            <% }) %>
+                         </select>
+                         <br>
+                          <button type="submit" class="btn btn-success">Cadastrar</button>
+                    </form>
+                    <hr>
+                </div>
+            </div>
+         </div>
+        <div class="oficina-container">
+            <div class="oficina-card">
+                <div class="oficina-header">
+                    <h1>Cosplayer</h1>
+                </div>
+                <div class="oficina-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Número:</th>
+                                <th>Valor:</th>
+                                <th>Nome do Cliente:</th>
+                                <th>Ações:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% cosplayers.forEach(cosplayer=> { %>
+                                <tr>
+                                    <td><img src="imgs/order.png" width="30px"></td>
+                                    <td>
+                                        <%= cosplayer.numero %>
+                                    </td>
+                                    <td>
+                                        <%= cosplayer.valor.toLocaleString('pt-br', {style: 'currency' , currency: 'BRL' })
+                                            %>
+                                    </td>
+                                    <td>
+                                        <%= cosplayer.oficina.nome %>
+                                    </td>
+                                    <td>
+                                        <a onclick="return confirm('Deseja mesmo excluir o pedido?')"
+                                        href="/cosplayers/excluir/<%= cosplayer.id %>" class="btn btn-danger">Excluir</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <%- include ('partials/footer.ejs') %>
