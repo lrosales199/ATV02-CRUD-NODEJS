@@ -1,30 +1,35 @@
 <%- include ('partials/header.ejs') %>
     <main class="perfil-container">
-        <div class="card-perfil">
-
-            <div class="perfil-header">
+        <section class="perfil-card">
+            <form action="" method="POST">
                 <div class="avatar-section">
-                    <div class="avatar">
-                        <img src="/imgs/perfil.png" alt="Foto de Perfil">
+                    <div class="avatar-controls">
+                        <div class="avatar-preview">
+                            <img src="/imgs/perfil.png" alt="Perfil">
+                        </div>
+                        <div class="perfil-text">
+                            <p>Leonardo Rosa Sales</p>
+                        </div>
                     </div>
-                    <button class="btn-sair">Sair</button>
                 </div>
-
-                <div class="perfil-info">
-                    <h2>Leonardo Rosa Sales</h2>
-                    <p>leo@email.com</p>
+                <div class="form-group">
+                    <label>Nome do Alquimista</label>
+                    <input type="text" placeholder="Digite o nome...">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="Digite o email...">
+                    <label>Afiliação / Divisão Militar</label>
+                    <select id="afiliacao_id">
+                        <option value="" disabled selected>Selecione uma afiliação...</option>
+                        <option value="1">Forças Armadas de Amestris</option>
+                        <option value="2">Homúnculos</option>
+                        <option value="3">Alquimistas Estatais</option>
+                        <option value="4">Rebeldes de Ishval</option>
+                    </select>
+                    <label>Biografia / Descrição do Perfil</label>
+                    <textarea id="biografia"
+                        rows="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Fullmetal Alchemist.</textarea>
                 </div>
-            </div>
-
-            <div class="descricao-box">
-                <h3>Descrição do Perfil:</h3>
-                <div class="linhas-decorativas">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-
-        </div>
-<%- include ('partials/footer.ejs') %>
+                <button type="submit" class="btn-submit">Atualizar Registro</button>
+            </form>
+        </section>
+        <%- include ('partials/footer.ejs') %>

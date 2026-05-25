@@ -1,0 +1,35 @@
+<%- include ('partials/header.ejs') %>
+
+<!-- Página de Edição -->
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Alterar cliente</h1>
+            <hr>
+        </div>
+        <div class="card-body">
+            <form action="/oficinas/alterar" method="POST">
+                <label>Nome do Cliente:</label>
+                <input type="text" name="nome" class="form-control" value="<%= oficina.nome %>" required>
+                <label>Tipo:</label>
+                <input type="text" name="cpf" class="form-control" value="<%= oficina.tipo %>" required>
+                <label>Material:</label>
+                <input type="text" name="endereco" class="form-control" value="<%= oficina.material %>" required>
+                <label>Status:</label>
+                <input type="text" name="endereco" class="form-control" value="<%= oficina.status %>" required>
+                <br>
+
+                <!-- Input escondida para armazenar o ID do cliente -->
+                <input type="hidden" name="id" value="<%= oficina.id %>">
+
+                <!-- Botão de Enviar -->
+                 <input type="submit" value="Alterar" class="btn btn-warning">
+                <!-- Botão de Limpar -->
+                 <input type="reset" value="Limpar" class="btn btn-danger">
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/footer.ejs') %>

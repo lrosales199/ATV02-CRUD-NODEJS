@@ -1,0 +1,99 @@
+<%- include ('partials/header.ejs') %>
+    <main>
+        <div class="oficina-container">
+            <div class="oficina-card">
+                <div class="oficina-header">
+                    <h1>Cadastrar Cliente</h1>
+                </div>
+                <div class="oficina-body">
+                    <form action="/oficinas/cadastrar" method="POST">
+                        <label>Nome do Cliente:</label>
+                        <input type="text" name="nome" placeholder="Insira o nome do cliente" class="form-control"
+                            required>
+                        <label>Tipo de Prótese</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="tipo" value="Braço" checked> Braço
+                            </label>
+                            <label>
+                                <input type="radio" name="tipo" value="Perna"> Perna
+                            </label>
+                        </div>
+                        <label for="material">Material Base:</label>
+                        <select id="material" name="material">
+                            <option value="Aço Cromado">Aço Cromado</option>
+                            <option value="Fibra de Carbono">Fibra de Carbono</option>
+                            <option value="Duralumínio">Duralumínio (Leve)</option>
+                            <option value="Liga de Neve (Militari)">Liga de Neve (Norte)</option>
+                        </select>
+                        <label>Status:</label>
+                        <input type="text" name="status" placeholder="Insira o status..."
+                            class="form-control" required>
+                        <br>
+                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <button type="reset" class="btn btn-danger">Limpar</button>
+                    </form>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <div class="oficina-container">
+            <div class="oficina-card">
+                <div class="oficina-header">
+                    <h1>Oficina Rockbell - Gestão de Automails</h1>
+                </div>
+                <div class="oficina-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Cliente</th>
+                                <th>Tipo</th>
+                                <th>Material</th>
+                                <th>Status</th>
+                                <th colspan="2" style="text-align: center;">Ações:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% oficinas.forEach(oficina=> { %>
+                                <tr>
+                                    <td><img src="imgs/avatar.png" width="30px"></td>
+                                    <td>
+                                        <%= oficina.nome %>
+                                    </td>
+                                    <td>
+                                        <%= oficina.tipo %>
+                                    </td>
+                                    <td>
+                                        <%= oficina.material %>
+                                    </td>
+                                    <td>
+                                        <%= oficina.status %>
+                                    </td>
+                                    <!-- Editar -->
+                                    <td>
+                                        <a href="/oficinas/editar/<%= oficina.id %>">
+                                            <button class="btn btn-warning">
+                                                Editar
+                                            </button>
+                                        </a>
+                                    </td>
+                                    <!-- Excluir -->
+                                    <td>
+                                        <a href="/oficinas/excluir/<%= oficina.id %>">
+                                            <button onclick="return confirm('Deseja mesmo excluir o cliente?')"
+                                                class="btn btn-danger">
+                                                Excluir
+                                            </button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <%- include ('partials/footer.ejs') %>

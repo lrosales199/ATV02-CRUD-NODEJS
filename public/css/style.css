@@ -18,7 +18,9 @@ body {
     line-height: 30px;
 }
 
-.navbar{
+/* --- NAVBAR --- */
+
+.navbar {
     background-color: var(--primary-color);
     color: var(--third-color);
     display: flex;
@@ -27,7 +29,7 @@ body {
     padding: 20px 50px;
 }
 
-.logo img{
+.logo img {
     height: 60px;
     margin-left: 20px;
 }
@@ -46,6 +48,13 @@ body {
     margin-right: 20px;
 }
 
+.navbar a:hover{
+    color: var(--second-color);
+    text-decoration: underline;
+}
+
+/* --- INDEX --- */
+
 .img {
     width: 100%;
     height: 450px;
@@ -61,13 +70,13 @@ body {
     justify-content: space-between;
 }
 
-.text-container p{
+.text-container p {
     width: 780px;
     font-size: 24px;
     line-height: 1.6;
 }
 
-.text-container img{
+.text-container img {
     width: 450px;
     height: 260px;
     border-radius: 10px;
@@ -75,86 +84,7 @@ body {
     overflow: hidden;
 }
 
-.perfil-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
-}
-
-.card-perfil {
-    background-color: #731F26;
-    width: 450px;
-    padding: 30px;
-    border-radius: 15px;
-    color: var(--third-color);
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.perfil-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.avatar-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid var(--third-color);
-    overflow: hidden;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.btn-sair {
-    background-color: var(--second-color);
-    border: none;
-    padding: 5px 25px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 115px;
-}
-
-.perfil-info h2 {
-    color: var(--second-color);
-    margin-bottom: 5px;
-    font-size: 24px;
-}
-
-.descricao-box {
-    background-color: var(--third-color);
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    margin-left: 120px;
-}
-
-.descricao-box h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.linhas-decorativas span {
-    display: block;
-    height: 1px;
-    background-color: var(--color-second-text);
-    margin-bottom: 12px;
-}
+/* ---  RANKING --- */
 
 .secao-tabela {
     padding: 50px 10%;
@@ -176,7 +106,7 @@ body {
 
 .tabela-container {
     overflow-x: auto;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
@@ -194,15 +124,169 @@ body {
     font-weight: bold;
 }
 
-.tabela-militar th, 
+.tabela-militar th,
 .tabela-militar td {
     padding: 15px 20px;
     border: 1px solid var(--second-color);
 }
 
+/* --- OFICINA --- */
+.oficina-container{
+    padding: 50px 10%;
+}
+
+.oficina-card{
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    padding: 40px 20px;
+}
+
+.oficina-header{
+    color: var(--second-color);
+}
+
+#material{
+    display: flex;
+    justify-content: baseline;
+}
+
+.oficina-body th, td{
+    padding-right: 20px;
+    color: var(--third-color);
+}
+
+/* --- PERFIL --- */
+
+.perfil-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.perfil-card {
+    background-color: var(--primary-color);
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-section {
+    margin-bottom: 25px;
+}
+
+.avatar-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.avatar-preview {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--second-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.perfil-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.perfil-text p {
+    font-size: 24px;
+    color: var(--third-color);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 20px;
+    color: var(--third-color);
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    background-color: var(--color-second-text);
+    border: 1px solid var(--second-color);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--color-primary-text);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--second-color);
+}
+
+input[type="email"] {
+    color: var(--color-primary-text);
+}
+
+textarea {
+    resize: vertical;
+}
+
+select option {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--second-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #9d8114;
+}
+
+.btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* --- PERSONAGENS --- */
+
 .section-2 {
     width: 100%;
-    padding: 60px 20px; 
+    padding: 60px 20px;
     background-color: #ffffff;
     box-sizing: border-box;
 }
@@ -221,7 +305,7 @@ body {
 
 .section-img2 {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
     gap: 20px;
@@ -273,13 +357,15 @@ body {
     line-height: 1.5;
 }
 
+/* --- FOOTER --- */
+
 .footer {
     background-color: var(--primary-color);
     text-align: center;
     height: 75px;
 }
 
-.footer p{
+.footer p {
     padding: 20px;
     font-size: 28px;
     font-weight: bold;
